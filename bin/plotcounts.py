@@ -1,5 +1,5 @@
 import argparse
-from matplotlib.pyplot import xlim
+from matplotlib.pyplot import loglog, xlim
 import pandas as pd
 
 
@@ -9,9 +9,9 @@ def plot(args):
     df['rank'] = df['word_frequency'].rank(ascending=False,
                                            method='max')
     df['inverse_rank'] = 1 / df['rank']
-    scatplot = df.plot.scatter(x='word_frequency', y='inverse_rank',
+    scatplot = df.plot.scatter(x='word_frequency', y='rank',
                                figsize=[12, 6], xlim=args.xlim,
-                               grid=True)
+                               grid=True, loglog=True)
     fig = scatplot.get_figure()
     fig.savefig(args.outfile)
 
