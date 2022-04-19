@@ -1,0 +1,14 @@
+../data/dracula.txt
+Author: Bram Stoker
+../data/frankenstein.txt
+Author: Mary Wollstonecraft (Godwin) Shelley
+../data/jane_eyre.txt
+Author: Charlotte Bronte
+../data/moby_dick.txt
+Author: Herman Melville
+../data/sense_and_sensibility.txt
+Author: Jane Austen
+../data/sherlock_holmes.txt
+Author: Arthur Conan Doyle
+../data/time_machine.txt
+Author: H. G. Wells
