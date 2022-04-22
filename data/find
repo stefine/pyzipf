@@ -1,4 +1,0 @@
-for sister in Elinor Marianne
-do
-    echo $sister: $(grep -wo $sister $1 | wc -l) 
-done
