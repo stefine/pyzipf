@@ -9,5 +9,5 @@ files and plot each word's rank versus its frequency.
 
 Usage:
 
-plotcounts results/dracula.csv --outfile results/dracula.png
-countwords data/dracula.txt -n 5
+- plotcounts results/dracula.csv --outfile results/dracula.png
+- countwords data/dracula.txt -n 5
