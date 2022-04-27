@@ -32,8 +32,9 @@ def process_file(fname, word_counts):
         update_counts(reader, word_counts)
 
 
-def main(args):
+def main():
     """Run the command line program."""
+    args = parse_command_line()
     log_level = logging.DEBUG if args.verbose else logging.WARNING
     logging.basicConfig(level=log_level, filename=args.logfile)
 
@@ -56,7 +57,7 @@ def main(args):
     util.collection_to_csv(word_counts, num=args.num)
 
 
-if __name__ == "__main__":
+def parse_command_line():
     parser = argparse.ArgumentParser(description=__doc__)
     # '*' to tell argparse that we will accept zero or more filenames
     parser.add_argument('infile', type=str,
@@ -68,4 +69,8 @@ if __name__ == "__main__":
     parser.add_argument('-l', '--logfile', type=str,
                         default='collate.log', help='Edit the log file')
     args = parser.parse_args()
-    main(args)
+    return args
+
+
+if __name__ == "__main__":
+    main()
