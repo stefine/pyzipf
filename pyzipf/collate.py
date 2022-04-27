@@ -5,7 +5,7 @@ import argparse
 import csv
 import string
 from collections import Counter
-import utilities as util
+from pyzipf import utilities as util
 import logging
 
 

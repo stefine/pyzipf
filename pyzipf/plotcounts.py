@@ -1,5 +1,4 @@
 import argparse
-from importlib.abc import Loader
 import pandas as pd
 import numpy as np
 from scipy.optimize import minimize_scalar
@@ -48,7 +47,8 @@ def set_plot_params(param_file):
         mpl.rcParams[param] = value
 
 
-def plot(args):
+def main():
+    args = parse_command_line()
     set_plot_params(args.plotparams)
     if args.saveconfig:
         save_config(args.saveconfig, mpl.rcParams)
@@ -72,7 +72,7 @@ def plot(args):
     ax.figure.savefig(args.outfile)
 
 
-if __name__ == "__main__":
+def parse_command_line():
     parser = argparse.ArgumentParser()
     parser.add_argument("inputs", type=argparse.FileType('r'),
                         nargs='?', default='-')
@@ -84,4 +84,8 @@ if __name__ == "__main__":
     parser.add_argument('--saveconfig', type=str,
                         help='Save configuration to file')
     args = parser.parse_args()
-    plot(args)
+    return args
+
+
+if __name__ == "__main__":
+    main()
