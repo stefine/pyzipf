@@ -6,3 +6,8 @@ files and plot each word's rank versus its frequency.
 ## Contributors
 
 - xx <741333@qq.com>
+
+Usage:
+
+plotcounts results/dracula.csv --outfile results/dracula.png
+countwords data/dracula.txt -n 5
